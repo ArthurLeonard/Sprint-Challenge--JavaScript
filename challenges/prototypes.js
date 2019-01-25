@@ -5,21 +5,21 @@
 /* == Step 1: Base Constructor ==
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height
 */
-class CuboidMaker {
-    constructor(dims) {
-      this.length = dims.length;
-      this.width = dims.width;
-      this.height = dims.height;
-    }
 
-    volume() {
-        return this.length * this.width * this.height;
-    }
+function CuboidMaker(dims) {
+    this.length = dims.length;
+    this.width = dims.width;
+    this.height = dims.height;
+}
 
-    surfaceArea() {
-        return 2 * (this.length*this.width + this.length*this.height + this.width*this.height);
-    }
-} // end CuboidMaker class
+CuboidMaker.prototype.volume = function() {
+    return this.length * this.width * this.height;
+};
+
+CuboidMaker.prototype.surfaceArea = function() {
+  return  2 * (this.length*this.width + this.length*this.height + this.width*this.height);
+};
+
 
 const cuboid = new CuboidMaker({
     length: 4,
